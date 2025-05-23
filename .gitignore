@@ -1,0 +1,13 @@
+*
+
+!/.gitignore
+
+!/wp-content/
+
+!/wp-content/themes/
+
+!/wp-content/themes/elliottiney/
+!/wp-content/themes/elliottiney/\*\*
+
+.DS\_Store
+Thumbs.db
