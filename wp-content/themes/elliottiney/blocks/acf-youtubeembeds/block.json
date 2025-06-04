@@ -1,0 +1,16 @@
+{
+    "name": "acf/acf-youtubeembeds",
+    "title": "Youtube video",
+    "description": "Add a YouTube video",
+    "style": [ "file:./acf-youtubeembeds.css" ],
+    "category": "media",
+    "icon": "admin-comments",
+    "keywords": ["youtube", "video"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "acf-youtubeembeds.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

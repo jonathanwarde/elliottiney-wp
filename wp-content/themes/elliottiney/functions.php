@@ -8,3 +8,6 @@ add_action( 'after_setup_theme', function() {
 
 require_once get_template_directory() . '/functions/custom-post-types/project.php';
 require_once get_template_directory() . '/functions/custom-post-types/testimonial.php';
+
+require_once get_template_directory() . '/functions/enqueue-scripts.php';
+require_once get_template_directory() . '/functions/acf/blocks/acf-blocks.php';
