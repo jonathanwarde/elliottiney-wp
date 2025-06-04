@@ -6,3 +6,4 @@ function jw_register_acf_blocks() {
     register_block_type($block_folder);
 }
 add_action('init', 'jw_register_acf_blocks');
+
