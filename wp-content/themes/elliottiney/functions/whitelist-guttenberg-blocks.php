@@ -27,6 +27,14 @@ add_filter( 'my_localized_gutenblock_data_filter', function( $localized_data ) {
     $localized_data['whitelistedBlocks'] = array(
         'core/image',
         'core/paragraph',
+        'core/heading',
+        'core/list',
+        'core/quote',
+        'core/code',
+        'core/gallery',
+        'core/file',
+        'core/youtube',
+        'core/vimeo',
         'acf/acf-youtubeembeds'
     );
     return $localized_data;
