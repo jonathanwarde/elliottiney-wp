@@ -33,6 +33,7 @@ add_filter( 'my_localized_gutenblock_data_filter', function( $localized_data ) {
         'core/code',
         'core/gallery',
         'core/file',
+        'core/embed',
         'core-embed/youtube',
         'core-embed/vimeo',
         'acf/acf-youtubeembeds'
