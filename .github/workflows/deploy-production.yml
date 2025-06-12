@@ -15,7 +15,7 @@ jobs:
       REMOTE_HOST:  ${{ secrets.PROD_SSH_HOST }}
       REMOTE_PORT:  ${{ secrets.PROD_SSH_PORT }}
       REMOTE_BASE:  /home/whitestr/elliottiney.whitestranddigital.co.uk/wp/wp-content/themes
-      LOCAL_THEME:  wp/wp-content/themes/elliottiney
+      LOCAL_THEME:  wp-content/themes/elliottiney
 
     steps:
       - uses: actions/checkout@v4
