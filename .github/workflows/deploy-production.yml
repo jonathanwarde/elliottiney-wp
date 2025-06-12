@@ -1,0 +1,41 @@
+name: Deploy WordPress theme
+
+on:
+  push:
+    branches: [production]     
+  workflow_dispatch:           
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production     
+
+    env:
+      REMOTE_USER:  ${{ secrets.PROD_SSH_USER }}
+      REMOTE_HOST:  ${{ secrets.PROD_SSH_HOST }}
+      REMOTE_PORT:  ${{ secrets.PROD_SSH_PORT }}
+      REMOTE_BASE:  /home/whitestr/elliottiney.whitestranddigital.co.uk/wp/wp-content/themes
+      LOCAL_THEME:  wp-content/themes/elliottiney
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.PROD_SSH_KEY }} 
+
+      - name: Add host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "$REMOTE_PORT" "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+      - name: Ensure remote theme directory exists
+        run: |
+          ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" \
+            "mkdir -p '$REMOTE_BASE/elliottiney' && chmod 755 '$REMOTE_BASE/elliottiney'"
+
+      - name: Sync theme via rsync
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p $REMOTE_PORT" \
+            "$LOCAL_THEME/" \
+            "$REMOTE_USER@$REMOTE_HOST:$REMOTE_BASE/elliottiney/"
