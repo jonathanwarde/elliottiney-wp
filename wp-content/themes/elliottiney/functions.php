@@ -10,6 +10,8 @@ require_once get_template_directory() . '/functions/custom-post-types/project.ph
 require_once get_template_directory() . '/functions/custom-post-types/testimonial.php';
 
 require_once get_template_directory() . '/functions/enqueue-scripts.php';
+require_once get_template_directory() . '/functions/acf-field-groups/video.php';
 require_once get_template_directory() . '/functions/acf/blocks/acf-blocks.php';
+
 
 require_once get_template_directory() . '/functions/whitelist-guttenberg-blocks.php';

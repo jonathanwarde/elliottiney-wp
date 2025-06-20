@@ -7,7 +7,8 @@ function jw_youtube_embeds_block() {
         array(
             'wp-blocks',       // registers wp.blocks
             'wp-dom-ready',    // ensures dom is ready
-            'wp-edit-post'     // loads the editor context
+            'wp-edit-post',     // loads the editor context
+            'wp-element'
         ),
         filemtime( get_stylesheet_directory() . '/template-parts/blocks/youtube/youtubeembed.js' ),
         true // load in footer
